@@ -13,7 +13,7 @@ int seq_search(vector<int> &keys, int key, int &numCmp)
     numCmp = 0;
     for (int i = 0; i < keys.size(); i++)
     {
-        numCmp++;
+        numCmp++; // Increment comparisons
         if (keys[i] == key)
         {
             return i; // Return the index if found
@@ -134,7 +134,7 @@ int main()
     }
 
     // Write the header
-    outputFile << "Search Key\tFound\tSeq. Search\tBin. Search\tEnhanced Bin. Search\n";
+    outputFile << "Search Key\tIndex Found\tSeq. Search\tBin. Search\tEnhanced Bin. Search\n";
 
     // Test with present keys
     for (int i = 0; i < 50; i++)
@@ -146,7 +146,7 @@ int main()
         int indexBin = bin_search(keys, key, numCmpBin);
         int indexEnh = bin2_search(keys, key, numCmpEnh);
 
-        outputFile << key << "\t" << key << "\t" << numCmpSeq << "\t\t" << numCmpBin << "\t\t" << numCmpEnh << "\n";
+        outputFile << key << "\t" << indexSeq << "\t" << numCmpSeq << "\t\t" << numCmpBin << "\t\t" << numCmpEnh << "\n";
     }
 
     // Test with absent keys
